@@ -1,50 +1,49 @@
 <!DOCTYPE html>
-<head>
+<html>
+  <head>
     <style>
-        form{
-            border-radius: 10px;
-            height: 300px;
-            width: 300px;
-            background-color: aqua;
-            border-radius: 2px;
-            margin-left:35pc;
-        }
-        h3{
-            text-align: center;
-            padding-top: 100px;
-        }
-        .button{
-            background-color:chartreuse;
-            border-radius: 8px;
-            margin-left: 65px;
-        }
+		  #noidung{text-align: center; background-color: aquamarine; height:250px; width:100%;color:rgb(0, 0, 0); font-size:25px;border-style: dotted; border-radius: 10px;}
+		  .button{
+        background: chartreuse;
+        border-radius: 9px;
+      }
+      #myForm{
+        margin-left: 36pc;
+      }
+      #area{
+        margin-left: 40pc;
+      }
     </style>
-</head>
-<body>
-    <form>
-        <h3 id="show">Tên của tôi ở đây</h3>
-        <input class="button" type="button" value="Ấn để hiển thị tên của tôi" onclick="showname()">
+  </head>
+  <body style="background:rgb(158, 117, 194)">
+    <h1 style="text-align: center;">Bài tập JavaScript</h1>
+    <form id="myForm" action="">
+      <input id="textbox1" name="textname" type="text"  placeholder="Nhập tên"/>
+      <input id="textbox2" name="n" type="text" placeholder="Nhập giá trị n">
     </form>
 
-    <form>
-        <h3>Thực hiện phép cộng 2 số:</h3>
-        <input id="a" type="text" placeholder="Nhập số A" style="margin-left: 50px;"><br><br>
-        <input id="b" type="text" placeholder="Nhập số B" style="margin-left: 50px;"><br>
-        <input type="button" class="button" onclick="tinhtong()" value="Kết quả" style="margin-left: 50px; margin-top: 20px;">
-        <h4 id="sum" style="padding-left: 30px;">Đáp án: </h4>
-    </form>
+    <p id="noidung"></p>
+
+    <div id="area">
+      <button class="button" type="button" onclick="hienthi()">Hiển thị tên </button>            
+      <button class="button" type="button" onclick="tinhtong()">Tổng</button>            
+      <button class="button" type="button" onclick="tinhtongchan()">Tổng 1 - n</button>  
+    </div>
 
     <script>
-        function showname(){
-            document.getElementById("show").innerHTML="Trần Quốc Trí";
-        }
-        function tinhtong(){
-            let a = document.getElementById=("a").value;
-            let b = document.getElementById=("b").value;
-            let c = a + b;
-            document.getElementById=("sum").innerHTML="ha";
-
-        }
-    </script>
-</body>
+      function hienthi() {
+	    // Giới thiệu tên
+        document.getElementById("noidung").innerHTML = "Tôi tên là " + document.forms["myForm"].textname.value;
+      }
+      function tinhtong() {
+        //Tính tổng từ 1 -> n
+	      document.getElementById("noidung").innerHTML ="Tổng từ 1 đến " +  document.forms["myForm"].n.value + " là: ";
+      }
+      function tinhtongchan() {
+        //Tính tổng các số chẳn từ 1 -> n
+        document.getElementById("noidung").innerHTML ="Tổng các số chẵn từ 1 đến " +  document.forms["myForm"].n.value + " là: ";
+      }
+    </script>    
+  </body>
 </html>
+      
