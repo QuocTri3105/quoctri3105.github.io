@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<head>
+    <style>
+        form{
+            border-radius: 10px;
+            height: 300px;
+            width: 300px;
+            background-color: aqua;
+            border-radius: 2px;
+            margin-left:35pc;
+        }
+        h3{
+            text-align: center;
+            padding-top: 100px;
+        }
+        .button{
+            background-color:chartreuse;
+            border-radius: 8px;
+            margin-left: 65px;
+        }
+    </style>
+</head>
+<body>
+    <form>
+        <h3 id="show">Tên của tôi ở đây</h3>
+        <input class="button" type="button" value="Ấn để hiển thị tên của tôi" onclick="showname()">
+    </form>
+
+    <form>
+        <h3>Thực hiện phép cộng 2 số:</h3>
+        <input id="a" type="text" placeholder="Nhập số A" style="margin-left: 50px;"><br><br>
+        <input id="b" type="text" placeholder="Nhập số B" style="margin-left: 50px;"><br>
+        <input type="button" class="button" onclick="tinhtong()" value="Kết quả" style="margin-left: 50px; margin-top: 20px;">
+        <h4 id="sum" style="padding-left: 30px;">Đáp án: </h4>
+    </form>
+
+    <script>
+        function showname(){
+            document.getElementById("show").innerHTML="Trần Quốc Trí";
+        }
+        function tinhtong(){
+            let a = document.getElementById=("a").value;
+            let b = document.getElementById=("b").value;
+            let c = a + b;
+            document.getElementById=("sum").innerHTML="ha";
+
+        }
+    </script>
+</body>
+</html>
