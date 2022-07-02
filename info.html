@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+            *{
+                box-sizing: border-box;
+            }
+            #left{
+                background-color: #f1f1f1;
+                width: 30pc;
+                float: left;
+                padding: 20px;
+                height: 500px;
+            }
+            #right{
+                background-color: #2196F3; 
+                width: 30pc;
+                float: left;
+                padding: 20px;
+                height: 500px;
+            }
+            .main{
+                margin: auto;
+                display:block ;
+            }
+
+            @media screen and (max-width: 800px) {
+                .left, .right {
+                width: 100%;
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <div class="main">
+            <div id="left">
+                <form>
+                    <label for="ten">Tên</label>
+                    <input type="text" id="teninput"><br><br>
+                    
+                    <label for="email">Email</label>
+                    <input type="text" id="emailinput"><br>
+
+                    <p>Giới tính</p>
+                    <input type="radio" id="radio">
+                    <label for="nam">Nam</label>
+                    <input type="radio" id="radio">
+                    <label for="nu">Nữ</label><br><br>
+
+                    <label for="quoctich">Quốc tịch</label>
+                    <select name="quoctich" id="">
+                        <option value="Vietnam">Vietnam</option>
+                        <option value="UK">United Kingdom</option>
+                        <option value="USA">United State</option>
+                        <option value="China">China</option>
+                        <option value="other">---Other---</option>
+                    </select><br><br>
+
+                    <label for="sothich">Sở thích</label><br>
+                    <input type="checkbox">
+                    <label for="">Đọc sách</label><br>
+                    <input type="checkbox">
+                    <label for="">Thể thao</label><br>
+                    <input type="checkbox">
+                    <label for="">Nghe nhạc</label><br>
+                    <input type="checkbox">
+                    <label for="">Khác</label><br><br>
+                    <input type="button" value="Chấp nhận" id="submit" >
+                    <input type="button" value="Hủy">
+
+                </form>
+            </div>
+            <div id="right">
+                <p id="tenoutput">Tên:</p><br>
+                <p id="emailoutput">Email:</p><br>
+                <p id="gioitinhoutput">Giới tính:</p><br>
+                <p>Quốc tịch:</p><br>
+                <p>Sở thích:</p><br>
+            </div>
+        </div>
+        <script>
+            function action(){
+                var ten = document.getElementById("teninput").value;
+                var email = document.getElementById("emailinput").value;
+                var gioitinh = document.getElementById("radio").value;
+                document.getElementById("tenoutput").innerHTML="Tên:  "+ ten;
+                document.getElementById("emailoutput").innerHTML="Email:  " + email;
+                document.getElementById("gioitinhoutput").innerHTML= gioitinh;
+            }
+            document.getElementById("submit").onclick=function(){action()};
+        </script>
+    </body>
+</html>
