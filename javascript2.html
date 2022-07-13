@@ -1,0 +1,154 @@
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style> 
+            *{
+                box-sizing: border-box;
+            }
+            #left{
+                background-color: #08e355;
+                width: 30pc;
+                float: left;
+                padding: 20px;
+                height: 500px;
+                border-style: dotted;
+                border-radius: 15px;
+            }
+            #right{
+                background-color: #2196F3; 
+                width: 30pc;
+                float: left;
+                padding: 20px;
+                height: 500px;
+                border-style: dotted;
+                border-radius: 15px;
+            }
+            .main{
+                margin: auto;
+                display:block ;
+                background-color: #74f7ec;
+            }
+
+            @media screen and (max-width: 800px) {
+                .left, .right {
+                width: 100%;
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <section>
+            <div class="main">
+                <div id="left">
+                    <form id="user-detail">
+
+                        <div class="input-main">
+                            <label for="name">Tên : </label>
+                            <input type="text" id="user-name" style="border-radius: 15px;">
+                        </div><br><br>
+                        <div class="input-main">
+                            <label for="name">Email : </label>
+                            <input type="text" id="user-email" style="border-radius: 15px;">
+                        </div><br>
+
+                        <label for="gender">Giới tính : </label>
+                        <div class="flex gender">
+                            <div class="male">
+                                <input type="radio" name="gender" value="Nam" id="user-gender">
+                                <label for="male">Nam</label>
+                            </div>
+                            <div class="female">
+                                <input type="radio" name="gender" value="Nữ" id="user-gender">
+                                <label for="female">Nữ</label>
+                            </div>
+                        </div><br>
+
+                        <div class="nation">
+                            <label for="nation">Quốc tịch</label>
+                            <select name="nationality" id="user-nation" style="border-radius: 15px;">
+                                <option>Vietnam</option>
+                                <option>United State </option>
+                                <option>Japan</option>
+                                <option>China</option>
+                                <option>Others</option>
+                            </select>
+                        </div><br>
+
+                        <label for="hobby">Sở thích : </label>
+                        <div class="flex hobby">
+                            <div class="coding">
+                                <input type="checkbox" name="hobby" value="Lập Trình">
+                                <label for="coding">Coding</label>
+                            </div>
+                            <div class="travel">
+                                <input type="checkbox" name="hobby" value="Du Lịch">
+                                <label for="travel">Du lịch</label>
+                            </div>
+                            <div class="reading">
+                                <input type="checkbox" name="hobby" value="Đọc sách">
+                                <label for="travel">Đọc sách</label>
+                            </div>
+                            <div class="gameing">
+                                <input type="checkbox" name="hobby" value="Gaming">
+                                <label for="Gaming">Chơi game</label>
+                            </div>
+                            <div class="cooking">
+                                <input type="checkbox" name="hobby" value="Nấu ăn">
+                                <label for="cooking">Nấu ăn</label>
+                            </div>
+                        </div>
+
+                        <div class="button">
+                            <input type="submit" value="Chấp Nhận" id="submit">
+                            <input type="reset">
+                        </div>
+                    </form>
+                </div>
+
+                <div id="right">
+                    <div class="content">
+                        <p class="content-name">Tên : </p><br>
+                        <p class="content-email">Email : </p><br>
+                        <p class="content-gender">Giới tính : </p><br>
+                        <p class="content-nation">Quốc Tịch : </p><br>
+                        <p class="content-hobby">Sở thích : </p>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+        
+    
+    <script>
+        const form = document.getElementById('user-detail').addEventListener('submit', (e) => {
+            e.preventDefault();
+            const name = document.getElementById('user-name').value;
+            document.querySelector('.content-name').textContent = `Tên : ${name}`;
+
+            const email = document.getElementById('user-email').value;
+            document.querySelector('.content-email').textContent = `Email : ${email}`;
+
+            const genders = document.getElementsByName('gender');
+            genders.forEach(gender => {
+                if (gender.checked == true) {
+                    document.querySelector('.content-gender').textContent = `Giới Tính : ${gender.value}`;
+                };
+            });
+
+            const nation = document.getElementById('user-nation').value;
+            document.querySelector('.content-nation').textContent = `Quốc tịch : ${nation}`;
+
+            const hobbies = document.getElementsByName('hobby');
+            hobbyArray = [];
+            hobbies.forEach(hobby => {
+                if (hobby.checked == true) {
+                    hobbyArray.push(hobby.value);
+                };
+            });
+            document.querySelector('.content-hobby').textContent = `Sở thích : ${hobbyArray.join(', ')}`;
+        });
+    </script>
+
+</body></html>

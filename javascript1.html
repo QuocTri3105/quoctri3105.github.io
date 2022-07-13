@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+		  #noidung{text-align: center; background-color: aquamarine; height:250px; width:100%;color:rgb(0, 0, 0); font-size:25px;border-style: dotted; border-radius: 10px;}
+		  .button{
+        background: chartreuse;
+        border-radius: 9px;
+      }
+      #myForm{
+        margin-left: 36pc;
+      }
+      #area{
+        margin-left: 40pc;
+      }
+    </style>
+  </head>
+  <body style="background:rgb(158, 117, 194)">
+    <h1 style="text-align: center;">Bài tập JavaScript</h1>
+    <form id="myForm" action="">
+      <input id="textbox1" name="textname" type="text"  placeholder="Nhập tên"/>
+      <input id="textbox2" name="n" type="text" placeholder="Nhập giá trị n">
+    </form>
+
+    <p id="noidung"></p>
+
+    <div id="area">
+      <button class="button" type="button" onclick="hienthi()">Hiển thị tên </button>            
+      <button class="button" type="button" onclick="tinhtong()">Tổng</button>            
+      <button class="button" type="button" onclick="tinhtongchan()">Tổng 1 - n</button>  
+    </div>
+
+    <script>
+      function hienthi() {
+	    // Giới thiệu tên
+        document.getElementById("noidung").innerHTML = "Tôi tên là " + document.forms["myForm"].textname.value;
+      }
+      function tinhtong() {
+        //Tính tổng từ 1 -> n
+	      
+        n = document.getElementById("textbox2").value;
+        let sum=0;
+        for(i=1;i<=n;i++){
+          sum=sum+i;
+        }
+        document.getElementById("noidung").innerHTML ="Tổng từ 1 đến " +  document.forms["myForm"].n.value + " là: ";
+      }
+      function tinhtongchan() {
+        //Tính tổng các số chẳn từ 1 -> n
+        document.getElementById("noidung").innerHTML ="Tổng các số chẵn từ 1 đến " +  document.forms["myForm"].n.value + " là: ";
+      }
+    </script>    
+  </body>
+</html>
+      
