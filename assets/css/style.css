@@ -398,6 +398,7 @@ select {
     border-radius: 0;
     -webkit-box-shadow: none;
     box-shadow: none;
+    background-color: #007bb5;
 }
 
 .bootstrap-select.open .dropdown-menu {
